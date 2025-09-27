@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let Them Cook</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Let Them Cook</h1>
+        <h2>Klasifikasi Makanan</h2>
+        <p class="description">Unggah gambar hidangan untuk mendapatkan nama, kalori, dan resepnya.</p>
+
+        <div class="upload-area">
+            <input type="file" id="imageInput" accept="image/*" class="input-file">
+            <button onclick="uploadImage()" class="btn-predict">Prediksi</button>
+        </div>
+        
+        <div class="preview-area">
+            <img id="imagePreview" src="#" alt="Pratinjau Gambar" class="image-preview" style="display:none;">
+            <div id="loading" class="loading" style="display:none;">Memproses... Mohon tunggu.</div>
+        </div>
+
+        <div class="result-area">
+            <h3>Hasil Prediksi Anda</h3>
+            <div id="resultOutput">
+                <p>Hasil akan muncul di sini.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

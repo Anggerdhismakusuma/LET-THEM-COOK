@@ -1,78 +1,192 @@
-/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
-.absolute {
-  position: absolute;
+/* Palet Warna: 3C467B (Dasar), 50589C (Medium), 636CCB (Terang), 6E8CFB (Aksen) */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-.fixed {
-  position: fixed;
-}
-.relative {
-  position: relative;
-}
-.static {
-  position: static;
-}
-.z-7 {
-  z-index: 7;
-}
-.z-10 {
-  z-index: 10;
-}
-.z-\[-1\] {
-  z-index: -1;
-}
+
 .container {
-  width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(60, 70, 123, 0.15); /* Menggunakan warna dasar untuk bayangan */
+    width: 100%;
+    max-width: 650px;
 }
-.mx-auto {
-  margin-inline: auto;
+
+h1 {
+    color: #3C467B; /* Warna Dasar */
+    text-align: center;
+    margin-bottom: 5px;
 }
-.block {
-  display: block;
+
+h2 {
+    color: #50589C; /* Warna Medium */
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    font-weight: 400;
+    font-size: 1.5rem;
 }
-.flex {
-  display: flex;
+
+.description {
+    text-align: center;
+    color: #636CCB; /* Warna Terang */
+    font-style: italic;
+    margin-bottom: 20px;
 }
-.hidden {
-  display: none;
+
+.upload-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
 }
-.inline-block {
-  display: inline-block;
+
+.input-file {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #636CCB;
+    border-radius: 6px;
 }
-.min-h-screen {
-  min-height: 100vh;
+
+.btn-predict {
+    background-color: #6E8CFB; /* Warna Aksen Cerah */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
-.w-full {
-  width: 100%;
+
+.btn-predict:hover {
+    background-color: #50589C; /* Hover ke Warna Medium */
 }
-.cursor-pointer {
-  cursor: pointer;
+
+.preview-area {
+    text-align: center;
+    margin-bottom: 25px;
 }
-.items-center {
-  align-items: center;
+
+.image-preview {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 3px solid #636CCB;
+    object-fit: cover;
 }
-.justify-center {
-  justify-content: center;
+
+.result-area h3 {
+    color: #3C467B;
+    border-top: 1px dashed #50589C;
+    padding-top: 20px;
+    margin-top: 0;
 }
-.rounded-full {
-  border-radius: calc(infinity * 1px);
+
+.result-item {
+    background-color: #f0f2ff; /* Background super terang */
+    padding: 20px;
+    border-left: 5px solid #6E8CFB; /* Border Aksen */
+    border-radius: 5px;
 }
-.bg-cover {
-  background-size: cover;
+
+.result-item h4 {
+    color: #3C467B;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
-.bg-fixed {
-  background-attachment: fixed;
+
+.loading {
+    padding: 10px;
+    color: #6E8CFB;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
-.bg-center {
-  background-position: center;
+
+.error-message {
+    color: #C82333;
+    font-weight: bold;
 }
-.bg-no-repeat {
-  background-repeat: no-repeat;
+
+/* --- CSS Tambahan untuk Daftar Resep (Pastikan ini ada!) --- */
+.recipe-list {
+    /* Reset properti dasar list */
+    list-style-type: decimal; /* Gunakan angka 1, 2, 3 */
+    padding-left: 20px; /* Jarak dari kiri untuk penomoran */
+    margin-left: 10px; /* Jarak tambahan dari kotak hasil */
+    color: #3C467B; /* Warna Teks Utama */
 }
-.text-center {
-  text-align: center;
+
+.recipe-list li {
+    /* Memastikan setiap item daftar memiliki baris baru */
+    display: list-item; 
+    text-align: left;
+    margin-bottom: 8px; /* Jarak antar langkah */
+    line-height: 1.5;
+    color: black; /* Warna penomoran */
 }
-.transition {
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
-  transition-timing-function: var(--tw-ease, ease);
-  transition-duration: var(--tw-duration, 0s);
+
+/* Palet Warna: 3C467B (Dasar), 50589C (Medium), 636CCB (Terang), 6E8CFB (Aksen) */
+
+/* (Pastikan semua styling body, container, h1, h2, dll. dari sebelumnya tetap ada) */
+
+/* --- Styling Dasar Item Hasil --- */
+
+.result-item {
+    background-color: #f0f2ff; /* Background super terang */
+    padding: 20px;
+    border-left: 5px solid #6E8CFB; /* Border Aksen */
+    border-radius: 5px;
+}
+
+.result-item h4 {
+    color: #3C467B;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* --- STYLING DAFTAR: UNORDERED LIST (Bahan Utama) --- */
+.ingredients-list {
+    /* Menghilangkan margin default browser yang berlebihan */
+    margin: 10px 0 15px 10px; 
+    
+    /* Indentasi yang sama dengan recipe-list */
+    padding-left: 20px; 
+    
+    list-style-type: disc; /* Menggunakan titik/lingkaran (bullet) */
+    color: black; 
+}
+
+.ingredients-list li {
+    margin-bottom: 8px; /* Jarak antar item */
+    line-height: 1.5;
+    color: black; /* Warna teks item */
+}
+
+/* --- STYLING DAFTAR: ORDERED LIST (Cara Membuat) --- */
+.recipe-list {
+    /* Menghilangkan margin default browser yang berlebihan */
+    margin: 10px 0 15px 10px;
+    
+    /* Indentasi yang sama dengan ingredients-list */
+    padding-left: 20px; 
+    
+    list-style-type: decimal; /* Gunakan angka 1, 2, 3 */
+    color: black; 
+}
+
+.recipe-list li {
+    margin-bottom: 8px; /* Jarak antar langkah */
+    line-height: 1.5;
+    color: black; /* Warna penomoran dan teks */
 }

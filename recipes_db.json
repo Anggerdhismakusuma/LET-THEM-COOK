@@ -1,32 +1,32 @@
 {
   "apple_pie": {
     "nama": "Apple Pie",
-    "kalori_per_sajian": 300,
-    "bahan_utama": "Kulit pie, 3 buah apel hijau, gula, kayu manis, butter",
-    "cara_membuat": "1. Siapkan adonan. 2. Campur apel, gula, dan kayu manis. 3. Masukkan ke dalam kulit pie. 4. Panggang pada suhu 180C selama 45 menit."
+    "kalori_per_sajian": "320 &ndash; 350 kcal",
+    "bahan_utama": "tepung terigu serbaguna 250 g, mentega dingin (dipotong dadu kecil) 125 g, gula pasir 1 sdm, garam 1/2 sdt, air es 60&ndash;80 ml, apel 5&ndash;6 buah (Granny Smith atau apel asam lain), gula pasir 100 g, gula palem 50 g, tepung terigu 2 sdm, bubuk kayu manis 1 sdt, bubuk pala 1/2 sdt (opsional), air lemon 1 sdt, mentega 30 g, kuning telur 1 butir, susu 1 sdm, gula pasir secukupnya",
+    "cara_membuat": "1. Buat kulit pie: campur tepung, gula, garam, masukkan mentega dingin hingga bertekstur remah, tambahkan air es sedikit demi sedikit, bagi 2 adonan lalu simpan di kulkas 30 menit.\n2. Siapkan isi: campur apel, gula pasir, gula palem, tepung, kayu manis, pala, dan air lemon, aduk rata lalu diamkan 10&ndash;15 menit.\n3. Rakit pie: giling adonan pertama, letakkan di loyang pie, masukkan isi apel dan beri potongan mentega, tutup dengan adonan kedua, rapatkan tepi dan buat sayatan kecil di atasnya.\n4. Panggang: olesi permukaan dengan kuning telur + susu, taburi gula, lalu panggang 190&deg;C selama 45&ndash;55 menit hingga kulit keemasan.\n5. Dinginkan & sajikan: biarkan pie sedikit dingin agar isi set, potong lalu sajikan hangat dengan es krim atau whipped cream.\n"
   },
   "baby_back_ribs": {
     "nama": "Baby Back Ribs",
-    "kalori_per_sajian": 550,
-    "bahan_utama": "1 kg iga babi, saus BBQ, madu, bubuk paprika",
-    "cara_membuat": "1. Lumuri iga dengan saus BBQ dan bumbu. 2. Panggang dalam oven tertutup selama 4 jam pada suhu rendah (150C). 3. Bakar sebentar untuk karamelisasi."
+    "kalori_per_sajian": "500 &ndash; 600 kcal",
+    "bahan_utama": "iga babi 1.5 &ndash; 2 kg (baby back ribs), garam 2 sdt, merica hitam 1 sdt, paprika bubuk 1 sdt, bawang putih bubuk 1 sdt, bawang bombay bubuk 1 sdt, cabai bubuk 1/2 sdt (opsional), saus BBQ 200 ml, minyak zaitun 1 sdm",
+    "cara_membuat": "1. Persiapkan iga: buang membran tipis di bagian belakang iga, bilas, lalu keringkan dengan tisu dapur.\n2. Bumbui: campur garam, merica, paprika, bawang putih bubuk, bawang bombay bubuk, dan cabai bubuk, lalu gosokkan rata ke seluruh permukaan iga.\n3. Bungkus iga dengan aluminium foil, diamkan minimal 30 menit (lebih baik semalaman di kulkas) agar bumbu meresap.\n4. Panggang tahap 1: masukkan iga terbungkus foil ke oven 150&deg;C selama 2&ndash;2.5 jam hingga daging empuk.\n5. Panggang tahap 2: buka foil, olesi saus BBQ, lalu panggang lagi 15&ndash;20 menit di suhu 200&deg;C hingga permukaan karamelisasi.\n6. Sajikan: biarkan iga sedikit dingin, potong per tulang, sajikan hangat dengan saus BBQ tambahan.\n"
   },
   "baklava": {
     "nama": "Baklava",
-    "kalori_per_sajian": 180,
-    "bahan_utama": "Filo pastry, kacang pistachio/walnut, madu, air mawar",
-    "cara_membuat": "1. Susun lembaran filo pastry dengan taburan kacang di antara lapisan. 2. Panggang. 3. Siram dengan sirup madu panas segera setelah keluar dari oven."
+    "kalori_per_sajian": "250 &ndash; 300 kcal",
+    "bahan_utama": "kulit filo 400 g, mentega cair 200 g, kacang pistachio 200 g (bisa campur dengan kenari atau almond), gula pasir 100 g, kayu manis bubuk 1 sdt (opsional), air 200 ml, gula pasir 200 g (untuk sirup), madu 100 g, air lemon 1 sdt",
+    "cara_membuat": "1. Siapkan isian: cincang halus kacang, campur dengan gula pasir dan kayu manis bubuk.\n2. Tata kulit filo: oles loyang dengan mentega cair, letakkan 2 lembar filo, olesi mentega, ulangi hingga 8 lembar.\n3. Taburkan campuran kacang di atas lapisan filo, lalu tutup lagi dengan 2 lembar filo + mentega, ulangi hingga kacang habis.\n4. Akhiri dengan 6&ndash;8 lapis filo, tiap lapis dioles mentega, tekan perlahan agar rata.\n5. Potong baklava berbentuk segitiga atau kotak sebelum dipanggang.\n6. Panggang di oven 170&deg;C selama 45&ndash;50 menit hingga keemasan.\n7. Buat sirup: rebus air, gula, madu, dan lemon hingga sedikit mengental.\n8. Siramkan sirup panas di atas baklava yang baru keluar dari oven, biarkan meresap minimal 4 jam atau semalaman.\n9. Sajikan setelah dingin, lebih nikmat jika ditaburi pistachio cincang.\n"
   },
   "beef_carpaccio": {
     "nama": "Beef Carpaccio",
-    "kalori_per_sajian": 250,
-    "bahan_utama": "Daging sapi tenderloin mentah, keju parmesan, arugula, minyak zaitun",
-    "cara_membuat": "1. Iris daging sapi sangat tipis. 2. Susun di piring. 3. Taburi dengan arugula, irisan parmesan, dan minyak zaitun. 4. Sajikan dingin."
+    "kalori_per_sajian": "220 &ndash; 250 kcal",
+    "bahan_utama": "daging sapi tenderloin 300 g (bekukan sebentar agar mudah diiris), arugula segenggam, keju parmesan parut tipis 30 g, minyak zaitun extra virgin 3 sdm, air lemon 1 sdm, garam secukupnya, merica hitam secukupnya, capers 1 sdm (opsional)",
+    "cara_membuat": "1. Bekukan daging tenderloin 30&ndash;45 menit agar padat lalu iris tipis&ndash;tipis dengan pisau tajam.\n2. Tata irisan daging di piring besar, susun hingga menutupi permukaan.\n3. Taburi garam dan merica hitam, lalu perciki minyak zaitun dan air lemon secara merata.\n4. Tambahkan daun arugula, parutan parmesan, dan capers di atasnya.\n5. Sajikan segera sebagai hidangan pembuka.\n"
   },
   "beef_tartare": {
     "nama": "Beef Tartare",
-    "kalori_per_sajian": 350,
-    "bahan_utama": "Daging sapi has dalam mentah cincang, kuning telur, caper, mustard Dijon",
-    "cara_membuat": "1. Cincang daging. 2. Campur dengan bumbu dan caper. 3. Bentuk dan sajikan segera dengan kuning telur mentah di atasnya."
+    "kalori_per_sajian": "250 &ndash; 300 kcal",
+    "bahan_utama": "daging sapi tenderloin segar 150 g (cincang halus), kuning telur 1 butir (opsional), mustard Dijon 1 sdt, bawang merah cincang halus 1 sdm, capers cincang 1 sdm, acar timun cincang 1 sdm, saus Worcestershire 1 sdt, minyak zaitun 1 sdt, garam secukupnya, merica secukupnya, peterseli cincang 1 sdm (opsional), roti panggang secukupnya (untuk pendamping)",
+    "cara_membuat": "1. Dinginkan daging sapi lalu cincang halus dengan pisau tajam (jangan blender agar teksturnya tetap bagus).\n2. Campurkan daging dengan mustard, bawang merah, capers, acar timun, saus Worcestershire, dan minyak zaitun.\n3. Bumbui dengan garam dan merica sesuai selera, aduk rata perlahan.\n4. Cetak dengan ring mold di piring saji lalu buat cekungan kecil di atasnya.\n5. Letakkan kuning telur segar di tengah, taburi peterseli, dan sajikan dengan roti panggang.\n"
   }
 }

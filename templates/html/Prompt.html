@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Recognition</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body
+    class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat bg-fixed relative"
+    style="background-image: url('/static/png/image.png'); background-color: black"
+>
+    <!-- Overlay hitam -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative text-center space-y-6 z-10 px-4 w-full max-w-2xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
+            Upload atau Capture Makanan
+        </h1>
+
+        <!-- Tombol utama -->
+        <div class="flex justify-center space-x-4">
+            <button
+                id="openCamera"
+                class="bg-yellow-500 px-4 py-2 rounded-lg hover:bg-yellow-600"
+            >
+                Open Camera
+            </button>
+
+            <label
+                for="galleryInput"
+                class="bg-yellow-500 px-4 py-2 rounded-lg hover:bg-yellow-600 cursor-pointer"
+            >
+                Upload from Gallery
+            </label>
+            <input id="galleryInput" type="file" accept="image/*" class="hidden" />
+        </div>
+
+        <!-- Area kamera / galeri -->
+        <div class="space-y-4">
+            <video
+                id="video"
+                autoplay
+                playsinline
+                class="mx-auto rounded-xl hidden w-64"
+            ></video>
+            <canvas id="canvas" class="hidden"></canvas>
+
+            <div class="relative inline-block">
+                <img id="snapshot" class="mx-auto rounded-xl hidden w-64" />
+                <button
+                    id="removeImage"
+                    class="absolute top-0 right-0 bg-black/70 text-white rounded-full px-2 py-1 text-xs hidden hover:bg-red-600"
+                >
+                    ✕
+                </button>
+            </div>
+
+            <!-- Tombol kamera -->
+            <div class="space-x-4">
+                <button
+                    id="captureButton"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hidden hover:bg-blue-600 transition"
+                >
+                    Capture
+                </button>
+                <button
+                    id="cancelButton"
+                    class="bg-red-500 text-white px-4 py-2 rounded-lg hidden hover:bg-red-600 transition"
+                >
+                    Cancel
+                </button>
+            </div>
+
+            <!-- Tombol galeri -->
+            <div class="space-x-4">
+                <button
+                    id="submitGalleryButton"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hidden hover:bg-blue-600 transition"
+                >
+                    Submit
+                </button>
+                <button
+                    id="cancelGalleryButton"
+                    class="bg-red-500 text-white px-4 py-2 rounded-lg hidden hover:bg-red-600 transition"
+                >
+                    Cancel
+                </button>
+            </div>
+
+            <!-- Hasil AI -->
+            <p id="result" class="text-white text-lg"></p>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const openCamera = document.getElementById("openCamera");
+        const galleryInput = document.getElementById("galleryInput");
+
+        const video = document.getElementById("video");
+        const canvas = document.getElementById("canvas");
+        const snapshot = document.getElementById("snapshot");
+        const removeImage = document.getElementById("removeImage");
+        const captureButton = document.getElementById("captureButton");
+        const cancelButton = document.getElementById("cancelButton");
+
+        const submitGalleryButton = document.getElementById("submitGalleryButton");
+        const cancelGalleryButton = document.getElementById("cancelGalleryButton");
+
+        const resultText = document.getElementById("result");
+
+        let currentStream = null;
+        let galleryImageData = null;
+
+        // ✅ Ganti ini kalau buka HTML langsung (absolute URL)
+        const PREDICT_URL = "/predict/"; 
+        // const PREDICT_URL = "http://127.0.0.1:8000/predict/";
+
+        // Matikan kamera
+        function stopCamera() {
+            if (currentStream) {
+                currentStream.getTracks().forEach((track) => track.stop());
+                currentStream = null;
+            }
+        }
+
+        // Sembunyikan UI kamera
+        function hideCameraUI() {
+            video.classList.add("hidden");
+            captureButton.classList.add("hidden");
+            cancelButton.classList.add("hidden");
+        }
+
+        // Reset UI
+        function resetUI() {
+            stopCamera();
+            hideCameraUI();
+            submitGalleryButton.classList.add("hidden");
+            cancelGalleryButton.classList.add("hidden");
+            snapshot.classList.add("hidden");
+            removeImage.classList.add("hidden");
+            snapshot.src = "";
+            galleryInput.value = "";
+            galleryImageData = null;
+            resultText.textContent = "";
+        }
+
+        // Kirim ke backend AI
+        async function sendToAI(imageData) {
+            if (!imageData) {
+                alert("Ambil atau upload gambar dulu!");
+                return;
+            }
+
+            resultText.textContent = "Mengirim...";
+
+            try {
+                const blob = await (await fetch(imageData)).blob();
+
+                const formData = new FormData();
+                formData.append('file', blob, 'image.png');
+
+                const predictResponse = await fetch(PREDICT_URL, {
+                    method: "POST",
+                    body: formData,
+                });
+
+                const result = await predictResponse.json();
+
+                if (predictResponse.ok) {
+                    const confidencePercentage = (result.confidence * 100).toFixed(2);
+                    resultText.textContent = `Prediksi: ${result.class_name} (Confidence: ${confidencePercentage}%)`;
+                } else {
+                    resultText.textContent = `Error: ${result.detail || result.error || "Unknown error"}`;
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                resultText.textContent = "Terjadi error saat memanggil AI.";
+            } finally {
+                submitGalleryButton.classList.add("hidden");
+                cancelGalleryButton.classList.add("hidden");
+            }
+        }
+
+        // Kamera
+        openCamera.addEventListener("click", async () => {
+            resetUI();
+            try {
+                currentStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = currentStream;
+                video.classList.remove("hidden");
+                captureButton.classList.remove("hidden");
+                cancelButton.classList.remove("hidden");
+            } catch (err) {
+                console.error("Gagal akses kamera:", err);
+                alert("Tidak bisa membuka kamera!");
+            }
+        });
+
+        cancelButton.addEventListener("click", () => resetUI());
+
+        captureButton.addEventListener("click", () => {
+            const context = canvas.getContext("2d");
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            const imageData = canvas.toDataURL("image/png");
+            snapshot.src = imageData;
+            snapshot.classList.remove("hidden");
+            removeImage.classList.remove("hidden");
+
+            stopCamera();
+            hideCameraUI();
+
+            sendToAI(imageData);
+        });
+
+        // Galeri
+        galleryInput.addEventListener("change", () => {
+            const file = galleryInput.files[0];
+            if (file && file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    stopCamera();
+                    hideCameraUI();
+
+                    snapshot.src = reader.result;
+                    snapshot.classList.remove("hidden");
+                    removeImage.classList.remove("hidden");
+
+                    galleryImageData = reader.result;
+
+                    submitGalleryButton.classList.remove("hidden");
+                    cancelGalleryButton.classList.remove("hidden");
+                    resultText.textContent = "";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert("Pilih file gambar yang valid!");
+                resetUI();
+            }
+        });
+
+        submitGalleryButton.addEventListener("click", () => {
+            sendToAI(galleryImageData);
+        });
+
+        cancelGalleryButton.addEventListener("click", () => resetUI());
+
+        // Tombol X (hapus foto)
+        removeImage.addEventListener("click", () => resetUI());
+    </script>
+</body>
+</html>

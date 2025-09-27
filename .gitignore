@@ -1,0 +1,38 @@
+# --- DEPENDENSI DAN PYTHON ENVIRONMENT ---
+# File bytecode Python
+*.pyc
+__pycache__/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+/lib/
+/include/
+/bin/
+/share/
+
+# File konfigurasi pip
+pip-log.txt
+pip-delete-this-file.txt
+
+# Dataset mentah/ekstraksi (biasanya sangat besar)
+data/
+*.zip
+*.rar
+*.tar.gz
+
+# --- FILE LOG & IDE/OS ---
+# File Log
+*.log
+logs/
+
+# File IDE (VS Code, PyCharm, dll.)
+.idea/
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db

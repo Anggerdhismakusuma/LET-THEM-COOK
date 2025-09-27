@@ -1,0 +1,32 @@
+{
+  "apple_pie": {
+    "nama": "Apple Pie",
+    "kalori_per_sajian": 300,
+    "bahan_utama": "Kulit pie, 3 buah apel hijau, gula, kayu manis, butter",
+    "cara_membuat": "1. Siapkan adonan. 2. Campur apel, gula, dan kayu manis. 3. Masukkan ke dalam kulit pie. 4. Panggang pada suhu 180C selama 45 menit."
+  },
+  "baby_back_ribs": {
+    "nama": "Baby Back Ribs",
+    "kalori_per_sajian": 550,
+    "bahan_utama": "1 kg iga babi, saus BBQ, madu, bubuk paprika",
+    "cara_membuat": "1. Lumuri iga dengan saus BBQ dan bumbu. 2. Panggang dalam oven tertutup selama 4 jam pada suhu rendah (150C). 3. Bakar sebentar untuk karamelisasi."
+  },
+  "baklava": {
+    "nama": "Baklava",
+    "kalori_per_sajian": 180,
+    "bahan_utama": "Filo pastry, kacang pistachio/walnut, madu, air mawar",
+    "cara_membuat": "1. Susun lembaran filo pastry dengan taburan kacang di antara lapisan. 2. Panggang. 3. Siram dengan sirup madu panas segera setelah keluar dari oven."
+  },
+  "beef_carpaccio": {
+    "nama": "Beef Carpaccio",
+    "kalori_per_sajian": 250,
+    "bahan_utama": "Daging sapi tenderloin mentah, keju parmesan, arugula, minyak zaitun",
+    "cara_membuat": "1. Iris daging sapi sangat tipis. 2. Susun di piring. 3. Taburi dengan arugula, irisan parmesan, dan minyak zaitun. 4. Sajikan dingin."
+  },
+  "beef_tartare": {
+    "nama": "Beef Tartare",
+    "kalori_per_sajian": 350,
+    "bahan_utama": "Daging sapi has dalam mentah cincang, kuning telur, caper, mustard Dijon",
+    "cara_membuat": "1. Cincang daging. 2. Campur dengan bumbu dan caper. 3. Bentuk dan sajikan segera dengan kuning telur mentah di atasnya."
+  }
+}

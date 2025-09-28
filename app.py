@@ -2,8 +2,8 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import json
-import os
 import io
 
 # --- KONFIGURASI PATH ---
@@ -33,6 +33,7 @@ except Exception as e:
     exit()
 
 app = Flask(__name__)
+CORS(app)
 
 # --- 2. FUNGSI PRE-PROCESSING ---
 def preprocess_image(img_stream):
@@ -98,4 +99,4 @@ if __name__ == '__main__':
     # Anda mungkin perlu menginstal semua requirements.txt terlebih dahulu: pip install -r requirements.txt
     print("\n--- Menjalankan Flask API ---")
     print("API berjalan di: http://127.0.0.1:5000/")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=False)

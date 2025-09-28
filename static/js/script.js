@@ -58,7 +58,7 @@ function displayResult(data) {
                 
                 <hr style="border-color: #50589C; margin: 15px 0;">
                 
-                <h4>🔥 Informasi Gizi & Bahan</h4>
+                <h4>🔥 Informasi Kalori</h4>
                 <p><strong>Kalori per Sajian:</strong> ${data.kalori_per_sajian.replace(/&ndash;/g, '–')}</p>
                 
                 <h4>🥦 Bahan Utama</h4>

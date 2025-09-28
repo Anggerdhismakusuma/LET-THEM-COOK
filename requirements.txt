@@ -4,3 +4,6 @@ gunicorn
 tensorflow
 numpy
 Pillow
+streamlit
+pandas
+scikit-learn

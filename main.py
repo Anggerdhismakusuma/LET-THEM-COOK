@@ -84,7 +84,7 @@ def get_prediction_and_recipe(model, processed_image_array, recipe_db, class_lab
 st.title("👨‍🍳 Let Them Cook: Penemuan Resep Berbasis Gambar")
 
 st.markdown("""
-Aplikasi ini menggunakan Model MobileNet (5 kelas) untuk mengidentifikasi bahan makanan dan menyarankan resep.
+Aplikasi ini menggunakan Model MobileNet untuk mengidentifikasi bahan makanan dan menyarankan resep.
 """)
 
 uploaded_file = st.file_uploader(

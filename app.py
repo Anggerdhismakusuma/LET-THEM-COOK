@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
+import streamlit as st
 import json
 import io
 
@@ -15,6 +15,8 @@ IMAGE_SIZE = (224, 224)
 # --- URUTAN KELAS KRITIS ---
 # Ini HARUS SAMA PERSIS dengan urutan class_indices yang dihasilkan saat training!
 CLASS_LABELS = ['apple_pie', 'baby_back_ribs', 'baklava', 'beef_carpaccio', 'beef_tartare'] 
+
+st.title("Let Them Cook")
 
 # --- 1. MEMUAT MODEL DAN DATABASE ---
 try:
@@ -33,7 +35,6 @@ except Exception as e:
     exit()
 
 app = Flask(__name__)
-CORS(app)
 
 # --- 2. FUNGSI PRE-PROCESSING ---
 def preprocess_image(img_stream):
@@ -95,8 +96,8 @@ def predict_food():
 
 
 # --- 4. JALANKAN APLIKASI ---
-if __name__ == '__main__':
-    # Anda mungkin perlu menginstal semua requirements.txt terlebih dahulu: pip install -r requirements.txt
-    print("\n--- Menjalankan Flask API ---")
-    print("API berjalan di: http://127.0.0.1:5000/")
-    app.run(host='0.0.0.0', port=5000, debug=False)
+# if __name__ == '__main__':
+#     # Anda mungkin perlu menginstal semua requirements.txt terlebih dahulu: pip install -r requirements.txt
+#     print("\n--- Menjalankan Flask API ---")
+#     print("API berjalan di: http://127.0.0.1:5000/")
+#     # app.run(host='0.0.0.0', port=5000, debug=False)
